@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 def synthetic_data(w, b, num_examples):
     """生成y=Xw+b+噪声"""
     # normal：返回一个张量，包含从指定均值means和标准差std的离散正态分布抽取的一组随机数
-    x = torch.normal(0, 1, (num_examples, len(w)))  # 均值为0，方差为1
+    x = torch.normal(0, 1, (num_examples, len(w)))  # 均值为0，方差为1,num_examples行数，len（w）列数
     # matmul：矩阵乘法
     y = torch.matmul(x, w) + b
     y += torch.normal(0, 0.01, y.shape)
